@@ -13,6 +13,8 @@ import { Gallery } from '../components/gallery';
 import { Header } from '../components/header';
 import { Menu } from '../components/menu';
 
+
+
 document.querySelector('#root').innerHTML = render(
   <div className="page">
     <Header />
@@ -25,3 +27,12 @@ document.querySelector('#root').innerHTML = render(
     <Footer />
   </div>
 );
+
+document.querySelector(".nav-btn").addEventListener("click", function () {
+  document.querySelector(".rollout-nav").classList.toggle("nav-closed");
+})
+
+document.querySelector(".rollout-nav").addEventListener("click", function () {
+  document.querySelector(".rollout-nav").classList.toggle("nav-closed");
+})
+
