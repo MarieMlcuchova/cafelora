@@ -1,9 +1,7 @@
 import { Drink } from "./Drink";
 import '../components/Drink/style.css';
 
-
-
-export const Menu = () => {
+export const Menu = ({drinks}) => {
     return (
         <section className="menu" id="menu">
             <div className="container">
@@ -11,37 +9,15 @@ export const Menu = () => {
                 <p className="menu-intro">
                     Vyberte si z našeho interaktivního menu a nemusíte čekat na obsluhu
                 </p>
-                <div className="drinks-list">
-                    <div className="drink">
-                        <Drink name="Espresso" img="/cups/espresso.png"/>
-                        <form className="drink__controls">
-                            <input type="hidden" className="order-id" value="0" />
-                            <button className="order-btn">
-                            Objednat
-                            </button>
-                        </form>
-                    </div>
-
-                    <div className="drink">
-                        <Drink name="Espresso" img="/cups/espresso.png"/>
-                        <form className="drink__controls">
-                            <input type="hidden" className="order-id" value="1" />
-                            <button className="order-btn">
-                            Objednat
-                            </button>
-                        </form>
-                    </div>
-
-                    <div className="drink">
-                        <Drink name="Espresso" img="/cups/espresso.png"/>
-                        <form className="drink__controls">
-                            <input type="hidden" className="order-id" value="2" />
-                            <button className="order-btn">
-                            Objednat
-                            </button>
-                        </form>
-                    </div>
+                <div className="drinks-list">  
+                    {drinks.map((drink) => (
+                        <div className="drink">
+                            <Drink name={drink.name} image={drink.image} layers={drink.layers}/>
+                        </div>
+                    ))}
+                   
                 </div>
+
 
                 <div className="order-detail">
                     <a href="/order.html">Detail objednávky</a>
