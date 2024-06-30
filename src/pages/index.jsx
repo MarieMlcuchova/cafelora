@@ -13,12 +13,13 @@ import { Gallery } from '../components/gallery';
 import { Header } from '../components/header';
 import { Menu } from '../components/menu';
 
+
 const response = await fetch('http://localhost:4000/api/drinks');
 const drinks = await response.json();
 
 document.querySelector('#root').innerHTML = render(
   <div className="page">
-    <Header />
+    <Header showMenu={true}/>
     <main>
       <Banner />
       <Menu drinks={drinks.data}/>
