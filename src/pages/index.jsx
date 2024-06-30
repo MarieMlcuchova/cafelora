@@ -37,6 +37,19 @@ document.querySelector(".rollout-nav").addEventListener("click", function () {
   document.querySelector(".rollout-nav").classList.toggle("nav-closed");
 })
 
+document.querySelectorAll(".drink__controls")
+  .forEach(form => form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
+    fetch('http://localhost:4000/api/drinks/' + event.target.dataset.id , {
+      method: 'PATCH',
+      headers: {
+      'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(
+        [{ op: 'replace', path: '/ordered', value: event.target.dataset.ordered === 'false'}]
+      ),
+    });
 
-
+    window.location.reload();
+  }));

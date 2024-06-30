@@ -12,12 +12,10 @@ export const Menu = ({drinks}) => {
                 <div className="drinks-list">  
                     {drinks.map((drink) => (
                         <div className="drink">
-                            <Drink name={drink.name} image={drink.image} layers={drink.layers}/>
+                            <Drink name={drink.name} image={drink.image} layers={drink.layers} ordered={drink.ordered} id={drink.id}/>
                         </div>
                     ))}
-                   
                 </div>
-
 
                 <div className="order-detail">
                     <a href="/order.html">Detail objednávky</a>
