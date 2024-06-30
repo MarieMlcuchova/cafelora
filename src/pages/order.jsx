@@ -10,15 +10,11 @@ const order = await fetch('http://localhost:4000/api/drinks?filter=ordered:eq:tr
 const finalOrder = await order.json();
 
 document.querySelector('#root').innerHTML = render(
-  <div className="page">
-    <div className="page">
-      <Header showMenu={false}/>
-
-      <main className="order">
-      <Order items={finalOrder.data}/>
-      </main>
-
-     <Footer />
-    </div>
-  </div>
+	<div className="page">
+		<Header showMenu={false}/>
+		<main className="order">
+			<Order items={finalOrder.data}/>
+		</main>
+		<Footer />
+	</div>
 );
