@@ -11,7 +11,7 @@ export const Menu = ({drinks}) => {
 				</p>
 				<div className="drinks-list">  
 					{drinks.map((drink) => (
-						<div className="drink">
+						<div className="drink" key={drink.id}>
 							<Drink name={drink.name} image={drink.image} layers={drink.layers} ordered={drink.ordered} id={drink.id}/>
 						</div>
 					))}

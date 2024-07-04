@@ -8,7 +8,7 @@ export const Order = ({ items }) => (
 		) : (
 			<div className="order__items">
 				{items.map((item, index) => (
-					<OrderItem key={index} image={item.image} name={item.name} />
+					<OrderItem image={item.image} name={item.name} />
 				))}
 			</div>
 		)}
